@@ -18,7 +18,6 @@ if (!articles.value) {
     starts_with: "articles/",
     version: "draft",
   });
-  console.log("got articles", data);
   articles.value = data.stories;
 }
 

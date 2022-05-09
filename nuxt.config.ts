@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   target: 'static',
   components: {
     global: true,
-    dirs: ["~/components",{ global: true, path: '~/components/bloks' }],
+    dirs: ["~/components",{ global: true, path: '~/components/blok' }],
   },
   build: {
     // storyblok/nuxt needed because of this https://github.com/storyblok/storyblok-nuxt/issues/81

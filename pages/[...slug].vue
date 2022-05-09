@@ -12,11 +12,17 @@
 
 <script lang="ts" setup>
 import { useStoryblokApi, useStoryblokBridge } from "@storyblok/vue";
+const route = useRoute();
+
 
 // fetch the story before rendering the page ('usally at the server')
+const slug = route.params.slug;
+const path = `cdn/stories/${Array.isArray(slug)? slug.join('/'): slug}`
+console.log('PATHMATCH', path);
+// fetch the story before rendering the page ('usally at the server')
 const storyblokApi = useStoryblokApi();
-const { data } = await useAsyncData("index", async () => {
-  const { data } = await storyblokApi.get("cdn/stories/home", {
+const { data } = await useAsyncData(path, async () => {
+  const { data } = await storyblokApi.get(path, {
     version: "draft",
   });
   return data;
