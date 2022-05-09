@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "axios": "^0.27.2",
+    "nuxt": "3.0.0-rc.1",
+    "nuxt-windicss": "^2.3.1"
+  },
+  "dependencies": {
+    "@marvr/storyblok-rich-text-vue-renderer": "^3.2.1",
+    "@storyblok/vue": "^6.0.3"
+  }
+}
