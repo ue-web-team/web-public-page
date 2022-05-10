@@ -39,16 +39,16 @@ const props = defineProps({
 });
 
 const title = computed(
-  () => props.blok?.content?.title || standalone.value.content.title
+  () => props.blok?.content?.title || standalone.value?.content?.title
 );
 const intro = computed(
-  () => props.blok?.content?.intro || standalone.value.content.intro
+  () => props.blok?.content?.intro || standalone.value?.content?.intro
 );
 const to = computed(() => {
   if(props.blok?.full_slug) {
     return '/' + props.blok.full_slug;
   }
-  return '/' + standalone.value.full_slug;
+  return '/' + standalone.value?.full_slug;
 });
 
 const standalone = ref();
