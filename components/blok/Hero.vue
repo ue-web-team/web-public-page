@@ -11,7 +11,15 @@
         >
           <span class="text-red-700">{{ first }}</span> <span>{{ rest }}</span>
         </h1>
-        <p class="mt-4 italic">'{{ blok.quote }}'</p>
+        <p v-if="blok.quote" class="mt-4 italic">'{{ blok.quote }}'</p>
+        <div class="mt-4 flex flex-wrap items-center gap-4">
+          <component
+            :is="blok.component"
+            v-for="blok in blok.links"
+            :key="blok._id"
+            :blok="blok"
+          />
+        </div>
       </div>
     </div>
     <!--div class="w-full h-32 -mt-32">
@@ -32,7 +40,7 @@ const props = defineProps({
 });
 
 const bdrop = computed(() => {
-  const imgUrl = (props.blok.image.filename);
+  const imgUrl = props.blok.image.filename;
   return {
     backgroundImage: `url('${imgUrl}')`,
     backgroundPosition: "center top",

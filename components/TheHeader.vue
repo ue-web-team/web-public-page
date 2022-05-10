@@ -43,8 +43,8 @@
                   <li>
                     <NuxtLink
                       class="text-black p-4 block font-semibold hover:underline"
-                      to="/contact"
-                      >Kontakt</NuxtLink
+                      to="/kundservice"
+                      >Kundservice</NuxtLink
                     >
                   </li>
                 </ul>

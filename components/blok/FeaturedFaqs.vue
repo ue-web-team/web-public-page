@@ -22,11 +22,10 @@
           :class="[index % 2 ? '-rotate-1' : 'rotate-1']"
           style="min-width: 33%"
         >
-          <ArticleTeaser
+          <BlokTeaserLink
             v-if="article.content"
-            :article-link="article.full_slug"
-            :article-content="article.content"
-          ></ArticleTeaser>
+            :blok="article"
+          ></BlokTeaserLink>
 
           <p v-else class="px-4 py-2 text-white bg-red-700 text-center rounded">
             This content loads on save.
@@ -51,18 +50,19 @@ const props = defineProps({
 // fetch the story before rendering the page ('usally at the server')
 const storyblokApi = useStoryblokApi();
 
-const { data } = await useAsyncData("index", async () => {
-
-  const { data } = await storyblokApi.get("cdn/stories/", {
-    by_uuids: props.blok.articles.join(','),
-    version: "draft",
-  });
- 
-  console.log('Vad i helvete!!!', data)
-  return data.stories;
+const { data } = await useAsyncData(props.blok.articles.join(","), async () => {
+  // only get specific articles
+  if (props.blok.articles.length) {
+    const { data } = await storyblokApi.get("cdn/stories/", {
+      by_uuids: props.blok.articles.join(","),
+      version: "draft",
+    });
+    return data.stories;
+  }
 });
 
 const sortedArticles = computed(() => {
+  if(!data.value) return;
   const featuredArticles = data.value;
   // Enable ordering of the article previews
   return featuredArticles.sort((a: any, b: any) => {
