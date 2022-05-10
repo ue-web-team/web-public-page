@@ -6,7 +6,7 @@
       {{ title }}
     </h2>
     <NuxtLink
-      :to="'/' + blok?.full_slug"
+      :to="to"
       class="prose prose-sm md:prose-lg lg:prose-xl block transition-colors duration-300 !hover:text-brown"
     >
       <RichTextRenderer v-if="intro" :document="intro" />
@@ -19,7 +19,7 @@
       {{ title }}
     </h2>
     <NuxtLink
-      :to="'/' + blok?.full_slug"
+      :to="to"
       class="prose prose-sm md:prose-lg lg:prose-xl block transition-colors duration-300 !hover:text-brown"
     >
       <RichTextRenderer v-if="intro" :document="intro" />
@@ -39,11 +39,17 @@ const props = defineProps({
 });
 
 const title = computed(
-  () => props.blok?.content?.title || standalone.value.title
+  () => props.blok?.content?.title || standalone.value.content.title
 );
 const intro = computed(
-  () => props.blok?.content?.intro || standalone.value.intro
+  () => props.blok?.content?.intro || standalone.value.content.intro
 );
+const to = computed(() => {
+  if(props.blok?.full_slug) {
+    return '/' + props.blok.full_slug;
+  }
+  return '/' + standalone.value.full_slug;
+});
 
 const standalone = ref();
 
@@ -55,9 +61,8 @@ if (props.blok?.link?.cached_url) {
     const { data } = await storyblokApi.get(path, {
       version: "draft",
     });
-    console.log("LINKED: ", data);
     return data.story;
   });
-  standalone.value = data.value.content;
+  standalone.value = data.value;
 }
 </script>

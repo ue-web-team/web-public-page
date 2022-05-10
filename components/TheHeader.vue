@@ -36,8 +36,8 @@
                   <li>
                     <NuxtLink
                       class="text-black p-4 block font-semibold hover:underline"
-                      to="/articles"
-                      >Artiklar</NuxtLink
+                      to="/kundservice/vanliga-fragor"
+                      >Vanliga frågor</NuxtLink
                     >
                   </li>
                   <li>

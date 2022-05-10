@@ -12,12 +12,20 @@ yarn install
 
 ```
 
+## Envs
+add an .env file in the project root and add your storyblok api key
+
+```bash
+NUXT_PUBLIC_STORYBLOK_API_TOKEN=<your storyblok api key>
+
+```
+
 ## Development Server
 
 Start the development server on http://localhost:3000
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 ## Production
@@ -25,13 +33,13 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+yarn build
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+yarn preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
