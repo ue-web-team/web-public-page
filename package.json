@@ -15,6 +15,7 @@
     "@headlessui/vue": "^1.6.1",
     "@heroicons/vue": "^1.0.6",
     "@marvr/storyblok-rich-text-vue-renderer": "^3.2.1",
-    "@storyblok/vue": "^6.0.3"
+    "@storyblok/vue": "^6.0.3",
+    "vue-marquee-text-component": "^2.0.1"
   }
 }

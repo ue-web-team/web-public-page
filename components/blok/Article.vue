@@ -39,12 +39,18 @@ const props = defineProps({
 });
 
 const first = computed(() => {
-  const arr = props.blok.title.split(" ");
-  return arr[0];
+  if (props.blok.title) {
+    const arr = props.blok.title.split(" ");
+    return arr[0];
+  }
+  return "Fallback ";
 });
 const rest = computed(() => {
-  const arr = props.blok.title.split(" ");
-  arr.shift();
-  return arr.join(" ");
+  if (props.blok.title) {
+    const arr = props.blok.title.split(" ");
+    arr.shift();
+    return arr.join(" ");
+  }
+  return "title";
 });
 </script>

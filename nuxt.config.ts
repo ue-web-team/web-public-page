@@ -2,6 +2,7 @@ import { defineNuxtConfig } from "nuxt";
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  ssr: true,
   meta: {
     title: 'Public page test',
     meta: [
@@ -23,7 +24,7 @@ export default defineNuxtConfig({
   build: {
     // storyblok/nuxt needed because of this https://github.com/storyblok/storyblok-nuxt/issues/81
     //transpile: ["#app"],
-    transpile: ["@marvr/storyblok-rich-text-vue-renderer"],
+    transpile: ["@marvr/storyblok-rich-text-vue-renderer", "vue-marquee-text-component"],
   },
   
   runtimeConfig: {

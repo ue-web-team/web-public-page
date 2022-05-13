@@ -1,17 +1,19 @@
 <template>
-  <section class="hero w-full py-16">
-    <h1 class="font-display text-shrimp-400 font-extrabold text-3xl mb-12">
-       blaaaaa!!!!
-    </h1>
-    ...
-	</section>
+  <div v-if="jokes?.length" class="mb-16">
+  </div>
 </template>
 
 <script lang="ts" setup>
+//import MarqueeText from "vue-marquee-text-component";
 const props = defineProps({
   blok: {
     type: Object,
     required: true,
   },
-})
+});
+
+const { data: jokes } = await useFetch<any>(
+  "https://api.icndb.com/jokes/random/10"
+);
+
 </script>

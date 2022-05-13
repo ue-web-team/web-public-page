@@ -11,7 +11,7 @@
         >
           <span class="text-red-700">{{ first }}</span> <span>{{ rest }}</span>
         </h1>
-        <p v-if="blok.quote" class="mt-4 italic">'{{ blok.quote }}'</p>
+        <p v-if="blok.quote" :style="{'color': blok.color.color}" class="mt-4 italic">'{{ blok.quote }}'</p>
         <div class="mt-4 flex flex-wrap items-center gap-4">
           <component
             :is="blok.component"
