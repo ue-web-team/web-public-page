@@ -1,23 +1,9 @@
 <template>
-  <div
-    class="
-      
-      min-h-screen
-      flex flex-col
-      
-    "
-  >
+  <div class="min-h-screen flex flex-col">
     <TheHeader />
-    <main class="">
+    <main>
       <slot />
     </main>
     <TheFooter />
   </div>
 </template>
-
-<style  scoped>
-.pattern {
-  background-image: url('~assets/topography.svg');
-  background-color: #1A1A2E;
-}
-</style>
