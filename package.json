@@ -16,6 +16,7 @@
     "@heroicons/vue": "^1.0.6",
     "@marvr/storyblok-rich-text-vue-renderer": "^3.2.1",
     "@storyblok/vue": "^6.0.3",
-    "vue-marquee-text-component": "^2.0.1"
+    "vue-marquee-text-component": "^2.0.1",
+    "vue3-carousel": "^0.1.40"
   }
 }

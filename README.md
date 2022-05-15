@@ -43,3 +43,6 @@ yarn preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+
+## Karrusell komponent
+https://github.com/ismail9k/vue3-carousel
