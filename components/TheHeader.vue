@@ -12,7 +12,7 @@
 
         <Popover v-slot="{ open }">
           <PopoverButton
-            class="group inline-flex items-center rounded-md text-black px-3 py-2 text-base font-medium transition-colors text-white hover:bg-gray-300"
+            class="group inline-flex items-center rounded-md text-black px-3 py-2 text-base font-medium transition-colors hover:bg-gray-300"
           >
             <span class="mr-2 hidden sm:inline">Meny</span>
             <XIcon

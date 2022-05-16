@@ -1,5 +1,5 @@
 <template>
-  <section class="max-w-5xl mx-auto px-4 sm:px-6 my-8">
+  <section v-editable="blok" class="max-w-5xl mx-auto px-4 sm:px-6 my-8">
     <ClientOnly>
       <Carousel
         v-if="slides?.length"
@@ -9,7 +9,6 @@
         <Slide v-for="slide in slides" :key="slides.uuid">
           <BlokSlide :blok="slide"/>
         </Slide>
-
         <template #addons>
           <Navigation />
           <!--Pagination class="p-0" /-->
@@ -31,7 +30,7 @@ const props = defineProps({
   },
 });
 
-// fetch the story before rendering the page ('usally at the server')
+// fetch the articles before rendering the page ('usally at the server')
 const storyblokApi = useStoryblokApi();
 const slugs = props.blok.slides
   .map((slide) => slide.article.cached_url)
