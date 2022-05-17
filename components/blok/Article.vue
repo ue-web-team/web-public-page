@@ -14,9 +14,9 @@
     </div>
 
     <div class="prose prose-sm md:prose-lg lg:prose-xl">
-      <img
+      <OptImage
         class="transform rotate-2"
-        :src="blok.image.filename"
+        :image="blok.image"
         sizes="sm:100vw md:80vw lg:600px xl:800px"
       />
       <rich-text-renderer :document="blok.intro" />

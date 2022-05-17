@@ -5,7 +5,7 @@
       <div
         class="nice shadow-sharp py-8 px-12 flex flex-col items-center justify-center sm:w-1/2 max-w-4xl"
       >
-        <img class="h-46 sm:h-52 lg:h-72" :src="blok.foreground.filename" />
+        <OptImage class="h-46 sm:h-52 lg:h-72" :image="blok.foreground" />
         <h1
           class="px-4 absolute lg:text-5xl sm:text-3xl text-xl font-display font-black uppercase text-white text-center tracking-tight lg:tracking-wide text-shadow-sharp small-caps"
         >

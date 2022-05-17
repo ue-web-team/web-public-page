@@ -5,9 +5,9 @@
     class="flex flex-col-reverse md:flex-row max-w-5xl mx-auto my-8"
   >
     <div class="hidden md:block relative h-96 w-1/2">
-      <img
+      <OptImage
         class="object-cover h-96 inset-y-0 w-full"
-        :src="blok.image.filename"
+        :image="blok.image"
       />
       <svg
         fill="currentColor"
@@ -23,7 +23,7 @@
 
     <article class="relative px-4 sm:px-6">
       <div class="relative">
-        <img
+        <OptImage
           class="md:hidden object-cover absolute h-full w-full"
           :src="blok.image.filename"
         />

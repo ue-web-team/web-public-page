@@ -3,9 +3,9 @@
     class="bg-blue-300 min-h-56 w-full mx-2 grid items-end relative group overflow-hidden"
     :to="'/' + blok.full_slug"
   >
-    <img
+    <OptImage
       class="absolute h-full min-w-full object-cover transform transition-transform duration-500 group-hover:scale-105"
-      :src="blok.content.image?.filename"
+      :image="blok.content.image"
     />
     <div
       class="bg-gradient-to-t from-gray-700 to to-transparent flex justify-center relative p-4"
