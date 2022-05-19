@@ -1,7 +1,12 @@
 <template>
-  <div class="mb-8" v-if="standalone">
+  <div
+    :class="[blok.embedded ? 'bg-green-200 rounded-lg p-4 sm:p-6 md:p-8' : '']"
+    class="mb-8 bg-gradient-6"
+    v-if="standalone"
+  >
     <h2
-      class="font-display text-white uppercase text-shadow-sharp font-bold mb-4 text-2xl lg:text-4xl"
+      :class="[blok.embedded ? '!mt-0' : 'text-shadow-sharp']"
+      class="font-display text-white uppercase font-bold mb-4 text-2xl lg:text-4xl"
     >
       {{ title }}
     </h2>
@@ -45,10 +50,10 @@ const intro = computed(
   () => props.blok?.content?.intro || standalone.value?.content?.intro
 );
 const to = computed(() => {
-  if(props.blok?.full_slug) {
-    return '/' + props.blok.full_slug;
+  if (props.blok?.full_slug) {
+    return "/" + props.blok.full_slug;
   }
-  return '/' + standalone.value?.full_slug;
+  return "/" + standalone.value?.full_slug;
 });
 
 const standalone = ref();

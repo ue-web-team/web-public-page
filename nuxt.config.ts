@@ -1,7 +1,19 @@
 import { defineNuxtConfig } from "nuxt";
+import fs from 'fs';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
+  vite: {
+    server: {
+      https: {
+        key: fs.readFileSync('cert/localhost+2-key.pem'),
+        cert: fs.readFileSync('cert/localhost+2.pem'),
+      },
+      hmr: {
+        protocol: 'wss'
+      }
+    }
+  },
   ssr: true,
   meta: {
     title: 'Public page test',

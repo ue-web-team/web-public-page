@@ -6,6 +6,7 @@
     <OptImage
       class="absolute h-full min-w-full object-cover transform transition-transform duration-500 group-hover:scale-105"
       :image="blok.content.image"
+      params="0x224"
     />
     <div
       class="bg-gradient-to-t from-gray-700 to to-transparent flex justify-center relative p-4"

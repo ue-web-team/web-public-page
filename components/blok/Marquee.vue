@@ -4,7 +4,9 @@
 </template>
 
 <script lang="ts" setup>
-//import MarqueeText from "vue-marquee-text-component";
+// No esm build availible but importing the component directly works
+// see https://github.com/nuxt/framework/discussions/4924
+import MarqueeText from "vue-marquee-text-component/src/components/MarqueeText.vue";
 const props = defineProps({
   blok: {
     type: Object,

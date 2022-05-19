@@ -8,6 +8,8 @@
       <OptImage
         class="object-cover h-96 inset-y-0 w-full"
         :image="blok.image"
+        loading="lazy"
+        params="0x384"
       />
       <svg
         fill="currentColor"
@@ -24,17 +26,19 @@
     <article class="relative px-4 sm:px-6">
       <div class="relative">
         <OptImage
-          class="md:hidden object-cover absolute h-full w-full"
-          :src="blok.image.filename"
+          class="md:hidden object-cover absolute rounded-lg h-full w-full"
+          :image="blok.image"
+          loading="lazy"
+          params="0x202"
         />
-        <div class="<md:(relative p-8 mb-4 text-white bg-black/40)">
+        <div class="<md:(relative p-8 mb-4 text-white bg-black/40 rounded-lg)">
           <h2
-            class="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase mb-3 <md:mt-18"
+            class="sm:text-lg sm:leading-snug font-semibold tracking-wide uppercase text-green-100 md:text-green-700 mb-3 <md:mt-18"
           >
             {{ blok.heading }}
           </h2>
           <p
-            class="text-3xl md:(text-2xl mb-8) lg:text-4xl leading-none font-extrabold tracking-tight"
+            class="text-3xl md:mb-8 lg:text-4xl leading-none font-extrabold tracking-tight"
           >
             {{ blok.subheading }}
           </p>

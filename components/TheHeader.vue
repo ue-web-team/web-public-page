@@ -55,11 +55,20 @@ import { useStoryblokApi } from "@storyblok/vue";
 
 // fetch our global settings for the navigation menu
 const storyblokApi = useStoryblokApi();
-const path = "cdn/stories/global-settings";
+const path = "cdn/stories/global/global-settings";
 const { data: story } = await useAsyncData(path, async () => {
   const { data } = await storyblokApi.get(path, {
     version: "draft",
   });
   return data.story;
 });
+
+onMounted(async () => {
+  const { data: alerts } = await storyblokApi.get('cdn/stories', {
+    version: "draft",
+    starts_with: "global/_globalalerts"
+  });
+  console.log('Alerts', alerts);
+})
+
 </script>

@@ -2,13 +2,13 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxi dev --port 4000 --https --ssl-cert cert/localhost+2.pem --ssl-key cert/localhost+2-key.pem",
     "generate": "nuxt generate",
     "preview": "nuxt preview"
   },
   "devDependencies": {
     "axios": "^0.27.2",
-    "nuxt": "3.0.0-rc.1",
+    "nuxt": "3.0.0-rc.3",
     "nuxt-windicss": "^2.3.1"
   },
   "dependencies": {

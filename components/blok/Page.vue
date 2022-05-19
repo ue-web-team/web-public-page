@@ -4,10 +4,9 @@
       <Title>{{blok.meta?.title}}</Title>
       <Meta name="description" :content="blok.meta?.description" />
     </Head>
-  
-    <component
-      :is="blok.component"
+    <Component
       v-for="blok in blok.body"
+      :is="blok.component"
       :key="blok._id"
       :blok="blok"
     />

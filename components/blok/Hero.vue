@@ -13,11 +13,11 @@
         </h1>
         <p v-if="blok.quote" :style="{'color': blok.color.color}" class="mt-4 italic">'{{ blok.quote }}'</p>
         <div class="mt-4 flex flex-wrap items-center gap-4">
-          <component
-            :is="blok.component"
-            v-for="blok in blok.links"
-            :key="blok._id"
-            :blok="blok"
+          <Component
+            v-for="link in blok.links"
+            :is="link.component"
+            :key="link._id"
+            :blok="link"
           />
         </div>
       </div>

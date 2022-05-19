@@ -10,7 +10,7 @@
       {{ rest }}
     </h1>
     <div class="font-display italic text-gray-600 text-sm my-4 lg:my-6">
-      <p>Publicerad: {{ new Date(story.created_at).toLocaleString() }}</p>
+      <p>Publicerad: {{ new Date(story?.created_at ?? Date.now()).toLocaleString() }}</p>
     </div>
 
     <div class="prose prose-sm md:prose-lg lg:prose-xl">
@@ -39,14 +39,14 @@ const props = defineProps({
 });
 
 const first = computed(() => {
-  if (props.blok.title) {
+  if (props.blok?.title?.length) {
     const arr = props.blok.title.split(" ");
     return arr[0];
   }
   return "Fallback ";
 });
 const rest = computed(() => {
-  if (props.blok.title) {
+  if (props.blok?.title?.length) {
     const arr = props.blok.title.split(" ");
     arr.shift();
     return arr.join(" ");
