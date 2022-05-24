@@ -16,7 +16,7 @@
           <Component
             v-for="link in blok.links"
             :is="link.component"
-            :key="link._id"
+            :key="link._uid"
             :blok="link"
           />
         </div>

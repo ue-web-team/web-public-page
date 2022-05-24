@@ -44,6 +44,10 @@ yarn preview
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
 
+## problem med powershell
+Open powerShell as Administrator
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+
 ## Karrusell komponent
 https://github.com/ismail9k/vue3-carousel
 

@@ -68,7 +68,7 @@ onMounted(async () => {
     version: "draft",
     starts_with: "global/_globalalerts"
   });
-  console.log('Alerts', alerts);
+  //console.log('Alerts', alerts);
 })
 
 </script>

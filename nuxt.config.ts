@@ -47,6 +47,7 @@ export default defineNuxtConfig({
   },
   
   modules: [
+    '@formkit/nuxt',
     //["@storyblok/nuxt", { accessToken: process.env.STORYBLOK_API_TOKEN }],
     // ...
   ],
