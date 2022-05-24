@@ -28,10 +28,6 @@ export default defineNuxtConfig({
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  components: {
-    global: true,
-    dirs: ["~/components",{ global: true, path: '~/components/blok' }],
-  },
   
   build: {
     // storyblok/nuxt needed because of this https://github.com/storyblok/storyblok-nuxt/issues/81
@@ -47,9 +43,13 @@ export default defineNuxtConfig({
   },
   
   modules: [
+    '@vueuse/nuxt',
     '@formkit/nuxt',
-    //["@storyblok/nuxt", { accessToken: process.env.STORYBLOK_API_TOKEN }],
-    // ...
+    ["@storyblok/nuxt", { 
+      accessToken: process.env.NUXT_PUBLIC_STORYBLOK_API_TOKEN,
+      bridge: process.env.NODE_ENV !== "production",
+      https: true
+    }],
   ],
   
   buildModules: [

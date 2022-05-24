@@ -7,9 +7,11 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@vueuse/core": "^8.5.0",
+    "@vueuse/nuxt": "^8.5.0",
     "axios": "^0.27.2",
     "nuxt": "3.0.0-rc.3",
-    "nuxt-windicss": "^2.3.1"
+    "nuxt-windicss": "^2.3.2"
   },
   "dependencies": {
     "@formkit/nuxt": "^1.0.0-beta.8",
@@ -17,7 +19,7 @@
     "@headlessui/vue": "^1.6.1",
     "@heroicons/vue": "^1.0.6",
     "@marvr/storyblok-rich-text-vue-renderer": "^3.2.1",
-    "@storyblok/vue": "^6.0.3",
+    "@storyblok/nuxt": "^4.0.1",
     "vue-marquee-text-component": "^2.0.1",
     "vue3-carousel": "^0.1.40"
   }

@@ -7,7 +7,7 @@
         :breakpoints="breakpoints"
       >
         <Slide v-for="slide in slides" :key="slides.uuid">
-          <BlokSlide :blok="slide"/>
+          <CarouselSlide :blok="slide"/>
         </Slide>
         <template #addons>
           <Navigation />

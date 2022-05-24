@@ -4,9 +4,9 @@ import {
   plugin,
 } from "@marvr/storyblok-rich-text-vue-renderer";
 import OptImage from "~/components/opt/Image.vue";
-import BlokVideo from "~/components/blok/Video.vue";
-import BlokDisclosure from "~/components/blok/Disclosure.vue";
-import BlokTeaserLink from "~/components/blok/TeaserLink.vue";
+import Video from  "~/storyblok/Video.vue";
+import Disclosure from "~/storyblok/Disclosure.vue";
+import TeaserLink from "~/storyblok/TeaserLink.vue";
 import { NodeTypes } from "@marvr/storyblok-rich-text-types";
 
 export default defineNuxtPlugin(({ vueApp }) => {
@@ -19,18 +19,18 @@ export default defineNuxtPlugin(({ vueApp }) => {
             params: "0x500",
           }),
         components: {
-          "blok-video": ({ fields }) =>
-            h(BlokVideo, {
+          "video": ({ fields }) =>
+            h(Video, {
               blok: { youtube_video_id: fields.youtube_video_id },
             }),
-          "blok-disclosure": ({ fields }) =>
+          "disclosure": ({ fields }) =>
             h(
-              BlokDisclosure,
+              Disclosure,
               { blok: { heading: fields.heading } },
               () => fields.text
             ),
-          "blok-teaser-link": ({ fields }) =>
-            h(BlokTeaserLink, { blok: { link: fields.link, embedded: true } }),
+          "teaser-link": ({ fields }) =>
+            h(TeaserLink, { blok: { link: fields.link, embedded: true } }),
         },
       }),
     })

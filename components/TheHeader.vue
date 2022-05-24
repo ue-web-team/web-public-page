@@ -1,6 +1,9 @@
 <template>
-  <div class="w-full relative bg-white border-b-2 border-black">
-    <header class="px-4 sm:px-6 flex tracking-wide font-display">
+  <header class="w-full z-10">
+    <div
+      class="fixed bg-white w-full h-20 px-4 sm:px-6 flex tracking-wide font-display transition transition-all duration-500"
+      :class="[arrivedState?.top? 'shadow-sm': 'shadow-xl' ]"
+    >
       <nav class="py-3 sm:py-5 flex w-full items-center">
         <NuxtLink
           class="text-lime-400 transition-colors duration-700 text-xl font-black uppercase text-shadow-sharp hover:text-brown"
@@ -44,8 +47,9 @@
           </transition>
         </Popover>
       </nav>
-    </header>
-  </div>
+    </div>
+    <div class="h-20"></div>
+  </header>
 </template>
 
 <script setup lang="ts">
@@ -64,11 +68,15 @@ const { data: story } = await useAsyncData(path, async () => {
 });
 
 onMounted(async () => {
-  const { data: alerts } = await storyblokApi.get('cdn/stories', {
+  const { data: alerts } = await storyblokApi.get("cdn/stories", {
     version: "draft",
-    starts_with: "global/_globalalerts"
+    starts_with: "global/_globalalerts",
   });
   //console.log('Alerts', alerts);
-})
+});
+
+const { arrivedState } = process.client
+  ? useScroll(document)
+  : { arrivedState: {top: true} };
 
 </script>
